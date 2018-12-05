@@ -16,7 +16,7 @@ namespace WindowsForms
         
         public Main()
         {
-            InitializeComponent();
+            InitializeComponent(); //comment
         }
 
         private void chứcVựToolStripMenuItem_Click(object sender, EventArgs e)
