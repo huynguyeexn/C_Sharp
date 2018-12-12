@@ -155,9 +155,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(232, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 17);
+            this.label6.Size = new System.Drawing.Size(154, 17);
             this.label6.TabIndex = 87;
-            this.label6.Text = "KHEN THƯỞNG VÀ KĨ LUẬT";
+            this.label6.Text = "THỜI GIAN CÔNG TÁC";
             // 
             // labbel
             // 
@@ -217,7 +217,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.labbel);
             this.Name = "THOIGIANCONGTAC";
-            this.Text = "THOIGIANCONGTAC";
+            this.Text = "THỜI GIAN CÔNG TÁC";
             this.Load += new System.EventHandler(this.THOIGIANCONGTAC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgv)).EndInit();
             this.ResumeLayout(false);

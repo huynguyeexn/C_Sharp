@@ -13,6 +13,7 @@ namespace WindowsForms
 {
     public partial class NHANVIEN : Form
     {
+        int cb_mapb_Drop,cb_macv_Drop, cb_matdhv_Drop, cb_bacluong_Drop, cb_gioitinh_Drop = -1;
         public NHANVIEN()
         {
             InitializeComponent();
@@ -26,7 +27,12 @@ namespace WindowsForms
         }
         public void Loadcombobox()
         {
-            
+            cb_macv_Drop = cb_macv.SelectedIndex;
+            cb_mapb_Drop = cb_mapb.SelectedIndex;
+            cb_matdhv_Drop = cb_matdhv.SelectedIndex;
+            cb_bacluong_Drop = cb_bacluong.SelectedIndex;
+            cb_gioitinh_Drop = cb_gioitinh.SelectedIndex;
+
             SqlCommand cn = new SqlCommand("Select macv, tencv from chucvu", con);
             SqlDataAdapter ad = new SqlDataAdapter(cn);
             DataSet ds = new DataSet();
@@ -34,6 +40,7 @@ namespace WindowsForms
             cb_macv.DataSource = ds.Tables[0];
             cb_macv.DisplayMember = "macv";
             cb_macv.ValueMember = "macv";
+            cb_macv.SelectedIndex = cb_macv_Drop;
 
             SqlCommand cn1 = new SqlCommand("Select MAPB, TENPB from PHONGBAN", con);
             SqlDataAdapter ad1 = new SqlDataAdapter(cn1);
@@ -42,6 +49,7 @@ namespace WindowsForms
             cb_mapb.DataSource = ds1.Tables[0];
             cb_mapb.DisplayMember = "MAPB";
             cb_mapb.ValueMember = "MAPB";
+            cb_mapb.SelectedIndex = cb_mapb_Drop;
 
             SqlCommand cn2 = new SqlCommand("Select MATDHV, TENTDHV from TRINHDOHOCVAN", con);
             SqlDataAdapter ad2 = new SqlDataAdapter(cn2);
@@ -50,7 +58,8 @@ namespace WindowsForms
             cb_matdhv.DataSource = ds2.Tables[0];
             cb_matdhv.DisplayMember = "MATDHV";
             cb_matdhv.ValueMember = "MATDHV";
-
+            cb_matdhv.SelectedIndex = cb_matdhv_Drop;
+            
             SqlCommand cn3 = new SqlCommand("Select BACLUONG from LUONG", con);
             SqlDataAdapter ad3 = new SqlDataAdapter(cn3);
             DataSet ds3 = new DataSet();
@@ -58,8 +67,10 @@ namespace WindowsForms
             cb_bacluong.DataSource = ds3.Tables[0];
             cb_bacluong.DisplayMember = "BACLUONG";
             cb_bacluong.ValueMember = "BACLUONG";
-
-            cb_gioitinh.SelectedIndex = 0;
+            cb_bacluong.SelectedIndex = cb_bacluong_Drop;
+            
+            cb_gioitinh.SelectedIndex = cb_gioitinh_Drop;
+            
         }
         private void NHANVIEN_Load(object sender, EventArgs e)
         {
@@ -106,7 +117,15 @@ namespace WindowsForms
                 DialogResult result = MessageBox.Show("Bạn muốn xóa dòng này ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    kn.xoanv(chon);
+                    try
+                    {
+                        kn.xoanv(chon);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Mã nhân viên đang được sử dụng ở bảng khác", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    bt_them_Click(sender, e);
                     Loaddulieu();
                 }
                 else if (result == DialogResult.No)
@@ -150,6 +169,7 @@ namespace WindowsForms
             catch
             {
                 chon = null;
+                bt_them_Click(sender, null);
             }
         }
 
@@ -205,9 +225,9 @@ namespace WindowsForms
             cb_matdhv.SelectedIndex = 0;
             ngaysinh.Value = DateTime.Now;
         }
-
         private void cb_mapb_DropDown(object sender, EventArgs e)
         {
+           
             Loadcombobox();
         }
 

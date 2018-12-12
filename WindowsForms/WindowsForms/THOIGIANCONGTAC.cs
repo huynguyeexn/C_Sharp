@@ -24,8 +24,13 @@ namespace WindowsForms
             string sql = "Select * from THOIGIANCONGTAC";
             dtgv.DataSource = kn.taobang(sql);
         }
+
+        int cb_manv_Drop, cb_macv_Drop = -1;
         public void Loadcombobox()
         {
+            cb_macv_Drop = cb_macv.SelectedIndex;
+            cb_manv_Drop = cb_manv.SelectedIndex;
+
             SqlCommand cn = new SqlCommand("Select MANV from NHANVIEN", con);
             SqlDataAdapter ad = new SqlDataAdapter(cn);
             DataSet ds = new DataSet();
@@ -33,6 +38,7 @@ namespace WindowsForms
             cb_manv.DataSource = ds.Tables[0];
             cb_manv.DisplayMember = "MANV";
             cb_manv.ValueMember = "MANV";
+            cb_manv.SelectedIndex = cb_manv_Drop;
 
             SqlCommand cn1  = new SqlCommand("Select MACV from CHUCVU", con);
             SqlDataAdapter ad1 = new SqlDataAdapter(cn1);
@@ -41,9 +47,8 @@ namespace WindowsForms
             cb_macv.DataSource = ds1.Tables[0];
             cb_macv.DisplayMember = "MACV";
             cb_macv.ValueMember = "MACV";
-
-            cb_macv.SelectedIndex = -1;
-            cb_manv.SelectedIndex = -1;
+            cb_macv.SelectedIndex = cb_macv_Drop;
+            
         }
        
         private void THOIGIANCONGTAC_Load(object sender, EventArgs e)
