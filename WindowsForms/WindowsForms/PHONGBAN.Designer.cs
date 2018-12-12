@@ -74,7 +74,6 @@
             this.dtgv.TabIndex = 20;
             this.dtgv.TabStop = false;
             this.dtgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellClick);
-            this.dtgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_CellContentClick);
             // 
             // bt_them
             // 

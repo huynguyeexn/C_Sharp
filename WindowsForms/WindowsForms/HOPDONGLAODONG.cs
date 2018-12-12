@@ -187,5 +187,10 @@ namespace WindowsForms
             ReportForm.rpHOPDONGLAODONG rp = new ReportForm.rpHOPDONGLAODONG();
             rp.Show();
         }
+
+        private void cb_manv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

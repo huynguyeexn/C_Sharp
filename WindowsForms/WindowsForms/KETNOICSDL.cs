@@ -28,7 +28,6 @@ namespace WindowsForms
         }
 
         #region PHÒNG BAN
-
         
             public void thempb(string maphongban, string tenphongban,string dchi, string sodt)
             {
@@ -38,7 +37,7 @@ namespace WindowsForms
             }
             public void suapb(string chon, string maphongban, string tenphongban, string dchi, string sodt)
             {
-                string sql = "UPDATE PHONGBAN SET MAPB='" + maphongban + "', TENPB=N'" + tenphongban + "',DIACHI='" + dchi + "',SDT='" + sodt + "' WHERE MAPB='" + chon+"'";
+                string sql = "UPDATE PHONGBAN SET MAPB='" + maphongban + "', TENPB=N'" + tenphongban + "',DIACHI=N'" + dchi + "',SDT='" + sodt + "' WHERE MAPB='" + chon+"'";
                 SqlCommand scm = new SqlCommand(sql, ketnoi);
                 scm.ExecuteNonQuery();
             }
@@ -54,7 +53,6 @@ namespace WindowsForms
 
         #region CHỨC VỤ
 
-        
             public void themcv(string macv, string tencv)
             {
                 string sql = "Insert into CHUCVU(MACV,TENCV)" + "values('" + macv + "',N'" + tencv + "')";

@@ -53,6 +53,8 @@
             this.cb_macv.Name = "cb_macv";
             this.cb_macv.Size = new System.Drawing.Size(177, 24);
             this.cb_macv.TabIndex = 108;
+            this.cb_macv.DropDown += new System.EventHandler(this.cb_macv_DropDown);
+            this.cb_macv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_macv_KeyDown);
             // 
             // bt_luu
             // 
@@ -73,6 +75,7 @@
             this.bt_thoat.TabStop = false;
             this.bt_thoat.Text = "Thoát";
             this.bt_thoat.UseVisualStyleBackColor = true;
+            this.bt_thoat.Click += new System.EventHandler(this.bt_thoat_Click);
             // 
             // bt_inds
             // 
@@ -190,6 +193,8 @@
             this.cb_manv.Name = "cb_manv";
             this.cb_manv.Size = new System.Drawing.Size(177, 24);
             this.cb_manv.TabIndex = 108;
+            this.cb_manv.DropDown += new System.EventHandler(this.cb_manv_DropDown);
+            this.cb_manv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_manv_KeyDown);
             // 
             // THOIGIANCONGTAC
             // 

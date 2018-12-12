@@ -180,6 +180,8 @@
             this.cb_manv.Name = "cb_manv";
             this.cb_manv.Size = new System.Drawing.Size(177, 24);
             this.cb_manv.TabIndex = 53;
+            this.cb_manv.DropDown += new System.EventHandler(this.cb_manv_DropDown);
+            this.cb_manv.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cb_manv_KeyDown);
             // 
             // reportViewer1
             // 

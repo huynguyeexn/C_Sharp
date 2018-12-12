@@ -26,13 +26,10 @@ namespace WindowsForms
             }
             else
             {
-                string s = "select * from dangnhap where username='" + username.Trim() + "'";
+                string s = "select * from dangnhap where username='" + username.Trim() + "'and password='"+txt_mkcu.Text+"'";
                 DataTable dt = new DataTable();
                 dt = kn.taobang(s);
-                string s2 = "select * from dangnhap where username='" + username.Trim() + "'and password='"+txt_mkcu.Text+"'";
-                DataTable dt2 = new DataTable();
-                dt2 = kn.taobang(s2);
-                if(dt2.Rows.Count != 0)
+                if(dt.Rows.Count != 0)
                 {
                     kn.doimk(username, txt_mkmoi.Text);
                     this.Close();
@@ -42,13 +39,7 @@ namespace WindowsForms
                 {
                     MessageBox.Show("Sai mật khẩu");
                 }
-                //else if (dt.Rows.Count != 0)
-                //{
-                //    kn.doimk(username, txt_xacnhanmk.Text);
-                //    this.Close();
-                //    MessageBox.Show("Bạn đã dổi mật khẩu thành công", "Chúc mừng", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //}
             }
         }
 

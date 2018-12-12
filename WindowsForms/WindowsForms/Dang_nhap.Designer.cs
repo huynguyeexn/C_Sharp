@@ -55,8 +55,7 @@
             this.txt_tendangnhap.Name = "txt_tendangnhap";
             this.txt_tendangnhap.Size = new System.Drawing.Size(181, 22);
             this.txt_tendangnhap.TabIndex = 0;
-            this.txt_tendangnhap.Text = "huy";
-            this.txt_tendangnhap.TextChanged += new System.EventHandler(this.txt_tendangnhap_TextChanged);
+            this.txt_tendangnhap.Text = "admin";
             this.txt_tendangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_tendangnhap_KeyDown);
             // 
             // btn_dangnhap
@@ -107,6 +106,7 @@
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
+            this.btn_thoat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.btn_thoat_KeyDown);
             // 
             // check_hienmatkhau
             // 

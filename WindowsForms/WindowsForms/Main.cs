@@ -13,7 +13,6 @@ namespace WindowsForms
 {
     public partial class Main : Form
     {
-        
         public Main()
         {
             InitializeComponent();
@@ -26,8 +25,7 @@ namespace WindowsForms
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DOIMATKHAU a1 = new DOIMATKHAU();
-            a1.Show();
+            new DOIMATKHAU().Show();
         }
 
         private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,7 +71,7 @@ namespace WindowsForms
 
         private void trìnhĐộHọcVấnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new THOIGIANCONGTAC().Show();
+            new TRINHDOHOCVAN().Show();
         }
 
         private void lươngToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -85,11 +83,7 @@ namespace WindowsForms
         {
                this.Close();
         }
-
-        private void usernameToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        
         public static string username = null;
         public void User(string u)
         {
@@ -108,11 +102,12 @@ namespace WindowsForms
             Dang_nhap gd = new Dang_nhap();
             gd.ShowDialog();
         }
+        private bool dang_xuat = false;
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             Thread th = new Thread(new ThreadStart(hiengiaodien));
             th.Start();
+            dang_xuat = true;
             this.Close();
         }
 
@@ -121,13 +116,12 @@ namespace WindowsForms
             new TK_luong_theoCV().Show();
         }
 
-        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        public void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
-        }
-
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
+            if (dang_xuat == true){ 
+                e.Cancel = false;
+                return;
+            }
             DialogResult dialogResult = MessageBox.Show("Bạn muốn thoát", "Chú ý", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dialogResult == DialogResult.Yes)
             {

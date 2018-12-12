@@ -161,5 +161,30 @@ namespace WindowsForms
             ReportForm.rpTHOIGIANCONGTAC rp = new ReportForm.rpTHOIGIANCONGTAC();
             rp.Show();
         }
+
+        private void bt_thoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cb_manv_DropDown(object sender, EventArgs e)
+        {
+            Loadcombobox();
+        }
+
+        private void cb_macv_DropDown(object sender, EventArgs e)
+        {
+            Loadcombobox();
+        }
+
+        private void cb_macv_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cb_manv_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
     }
 }

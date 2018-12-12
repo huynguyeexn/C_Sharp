@@ -40,7 +40,6 @@ namespace WindowsForms
             this.bt_huy.Enabled = true;
             this.bt_luu.Enabled = true;
             this.bt_them.Enabled = true;
-            
         }
 
         private void bt_luu_Click(object sender, EventArgs e)
@@ -77,18 +76,6 @@ namespace WindowsForms
         private void bt_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-        private void dtgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //int chiso = -1;
-            //DataTable bang = new DataTable();
-            //bang = (DataTable)dtgv.DataSource;
-            //chiso = dtgv.SelectedCells[0].RowIndex;
-            //DataRow hang = bang.Rows[chiso];
-            //txt_mapb.Text = hang["MAPB"].ToString();
-            //txt_tenpb.Text = hang["TENPB"].ToString();
-            //txt_diachi.Text = hang["DIACHI"].ToString();
-            //txt_sdt.Text = hang["SDT"].ToString();
         }
 
         private void bt_xoa_Click(object sender, EventArgs e)
@@ -142,22 +129,6 @@ namespace WindowsForms
 
         private void bt_sua_Click(object sender, EventArgs e)
         {
-            if (txt_mapb.Text == "")
-            {
-
-            }
-            if (txt_tenpb.Text == ""){
-
-            }
-            if (txt_diachi.Text == "")
-            {
-
-            }
-            if (txt_sdt.Text == "")
-            {
-
-            }
-
 
             if (chon != null)
             {

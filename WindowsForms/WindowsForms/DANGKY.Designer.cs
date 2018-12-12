@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btn_thoat = new System.Windows.Forms.Button();
-            this.btn_dangnhap = new System.Windows.Forms.Button();
+            this.btn_dangky = new System.Windows.Forms.Button();
             this.txt_matkhau = new System.Windows.Forms.TextBox();
             this.txt_tendangnhap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,15 +50,15 @@
             this.btn_thoat.UseVisualStyleBackColor = true;
             this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
             // 
-            // btn_dangnhap
+            // btn_dangky
             // 
-            this.btn_dangnhap.Location = new System.Drawing.Point(51, 234);
-            this.btn_dangnhap.Name = "btn_dangnhap";
-            this.btn_dangnhap.Size = new System.Drawing.Size(101, 35);
-            this.btn_dangnhap.TabIndex = 13;
-            this.btn_dangnhap.Text = "Đăng ký";
-            this.btn_dangnhap.UseVisualStyleBackColor = true;
-            this.btn_dangnhap.Click += new System.EventHandler(this.btn_dangnhap_Click);
+            this.btn_dangky.Location = new System.Drawing.Point(51, 234);
+            this.btn_dangky.Name = "btn_dangky";
+            this.btn_dangky.Size = new System.Drawing.Size(101, 35);
+            this.btn_dangky.TabIndex = 13;
+            this.btn_dangky.Text = "Đăng ký";
+            this.btn_dangky.UseVisualStyleBackColor = true;
+            this.btn_dangky.Click += new System.EventHandler(this.btn_dangky_Click);
             // 
             // txt_matkhau
             // 
@@ -139,7 +139,7 @@
             this.ClientSize = new System.Drawing.Size(347, 293);
             this.Controls.Add(this.check_hienmatkhau);
             this.Controls.Add(this.btn_thoat);
-            this.Controls.Add(this.btn_dangnhap);
+            this.Controls.Add(this.btn_dangky);
             this.Controls.Add(this.txt_nhaplaimatkhau);
             this.Controls.Add(this.txt_matkhau);
             this.Controls.Add(this.label4);
@@ -159,7 +159,7 @@
         #endregion
 
         private System.Windows.Forms.Button btn_thoat;
-        private System.Windows.Forms.Button btn_dangnhap;
+        private System.Windows.Forms.Button btn_dangky;
         private System.Windows.Forms.TextBox txt_matkhau;
         private System.Windows.Forms.TextBox txt_tendangnhap;
         private System.Windows.Forms.Label label3;

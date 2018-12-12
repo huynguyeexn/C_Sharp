@@ -19,7 +19,7 @@ namespace WindowsForms
             InitializeComponent();
         }
         KETNOICSDL kn = new KETNOICSDL();
-        private void btn_dangnhap_Click(object sender, EventArgs e)
+        private void btn_dangky_Click(object sender, EventArgs e)
         {
             string s = "select * from dangnhap where username='" + txt_tendangnhap.Text + "'";
             DataTable dt = new DataTable();
@@ -31,6 +31,10 @@ namespace WindowsForms
                 this.txt_matkhau.Clear();
                 this.txt_nhaplaimatkhau.Clear();
                 this.txt_tendangnhap.Focus();
+            }
+            else if(txt_matkhau.Text == "" || txt_nhaplaimatkhau.Text == "" || txt_tendangnhap.Text == "")
+            {
+                MessageBox.Show("Vui lòng ghi đầy đủ thông tin", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if(txt_matkhau.Text != txt_nhaplaimatkhau.Text)
             {

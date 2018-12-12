@@ -47,7 +47,7 @@ namespace WindowsForms
                 }
                 else
                 {
-                    MessageBox.Show("Mã NHÂN VIÊN đã tồn tại, vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Nhân viên đã được chấm công, vui lòng nhập lại", "Thông báo", MessageBoxButtons.OK);
                 }
             }
         }
@@ -148,6 +148,16 @@ namespace WindowsForms
         {
             ReportForm.rpCHAMCONG rp = new ReportForm.rpCHAMCONG();
             rp.Show();
+        }
+
+        private void cb_manv_DropDown(object sender, EventArgs e)
+        {
+            Loadcombobox();
+        }
+
+        private void cb_manv_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
         }
     }
 }

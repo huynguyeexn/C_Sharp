@@ -20,11 +20,6 @@ namespace WindowsForms
 
         }
         KETNOICSDL cnn = new KETNOICSDL();
-        public void Loaddulieu()
-        {
-            //string sql = "Select * from dangnhap";
-            //data
-        }
         private void btn_thoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -60,7 +55,6 @@ namespace WindowsForms
                 this.txt_tendangnhap.Focus();
             }
         }
-
         private void check_hienmatkhau_CheckedChanged(object sender, EventArgs e)
         {
             if(check_hienmatkhau.Checked)
@@ -72,23 +66,15 @@ namespace WindowsForms
                 txt_matkhau.UseSystemPasswordChar = true;
             }
         }
-
         private void Dang_nhap_Load(object sender, EventArgs e)
         {
             txt_tendangnhap.Focus();
         }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DANGKY dangky = new DANGKY();
             dangky.Show();
         }
-
-        private void txt_tendangnhap_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_dangnhap_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -96,7 +82,6 @@ namespace WindowsForms
                 btn_dangnhap_Click(sender, e);
             }
         }
-
         private void txt_tendangnhap_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -104,12 +89,19 @@ namespace WindowsForms
                 btn_dangnhap_Click(sender, e);
             }
         }
-
         private void txt_matkhau_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 btn_dangnhap_Click(sender, e);
+            }
+        }
+
+        private void btn_thoat_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_thoat_Click(sender, e);
             }
         }
     }
