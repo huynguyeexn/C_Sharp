@@ -252,6 +252,7 @@ namespace WindowsForms
             scm.ExecuteNonQuery();
         }
         #endregion
+
         internal DataTable taobang()
         {
             throw new NotImplementedException();

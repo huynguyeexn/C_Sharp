@@ -39,7 +39,6 @@ namespace WindowsForms
                 {
                     MessageBox.Show("Sai mật khẩu");
                 }
-
             }
         }
 
